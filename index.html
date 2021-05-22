@@ -1,3 +1,4 @@
+<script src="r.js"></script>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,8 +7,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/index.css">
     <title>Профиль</title>
+    <script>
+        jQuery.easing['easeOutCirc'] = function (x, t, b, c, d) {
+               return c * Math.sqrt(1 - (t=t/d-1)*t) + b;
+           }
+       $(function() {
+           var option = {
+               speed: 6,
+               duration: 3,
+               stopImageNumber: 4
+           };
+       
+        $("#go").click(function() {
+           option.stopImageNumber = Math.random() * 11|0;
+           $(".roulette-inner  img").removeClass("active");
+           $("#config").text(JSON.stringify(option));
+           $({
+               left: 0
+           }).animate({
+               left: 844 * option.speed + 75 * (option.stopImageNumber + 6)
+           }, {
+               duration: option.duration * 1000,
+               easing: "easeOutCirc",
+               step: function(a) {
+                   $(".roulette-inner").css("transform", "translateX(-" + a % 600 + "px)");
+               },
+               complete: function() {
+                   $(".roulette-inner  img").eq(option.stopImageNumber + (option.stopImageNumber < 6) * 11).addClass("active");
+               }
+           });
+         })
+       });
+    </script>
+    <style type="text/css">body{
+        position:relative;
+      }
+     
+      .roulette-inner img{
+        width: 72px;
+        height: 72px;
+        margin: 2px;
+      }
+     
+      .roulette-inner img.active{
+        border:2px solid rgba(89,0,153,.2);
+        box-sizing:border-box;
+        border-radius:50%;
+        padding:-4px 4px 2px 4px;
+        transform:scale(1.7);
+        z-index:1000;
+        background-color:rgba(0,255,127,.5);
+      }
+      </style>
 </head>
 <body>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="roulette" tabindex="-1" aria-labelledby="rouletteCourse" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <article>
+                        <h5 class="modal-title" id="rouletteCourse">Не знаешь, что поучить?</h5>
+                        <br>
+                        <p class="">Сгенерируй случайный курс для изучения</p>
+                    </article>
+                </div>
+                <div class="modal-body pt-0 ps-3">
+                    <div class="roulette" style="overflow: hidden; height: 160px; margin: 0 auto;">
+                        <div class="roulette-inner" style="position: relative; top: 30px; width: 7000px;">
+                            <a href=""><img src="stylesheets/materials/courses/angular.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/c.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/cpp.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/csh.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/css.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/data.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/go.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/html.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/II.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/java.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/jquery.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/js.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/kotlin.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/php.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/python.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/react.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/ruby.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/sql.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/swift.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/angular.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/c.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/cpp.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/csh.png" style="display: block; float: left;"></a>
+                            <a href=""><img src="stylesheets/materials/courses/css.png" style="display: block; float: left;"></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="go" class="btn btn-primary" onclick="play()">Крутить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a href="" class="navbar-brand">OurBrand</a>
@@ -38,13 +144,12 @@
     </nav>
 
     <div class="container">
-        <div class="card offset-md-2" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-3">
+        <div class="card offset-md-1" style="max-width: 1300px;">
+            <div class="row">
+                <div class="col-md-2">
                     <img class="mt-40 ms-2 avatar-size" src="stylesheets/materials/avatar.svg" alt="user-avatar">
                 </div>
-
-                <div class="col-md-8">
+                <div class="col-md-3">
                     <div class="card-body mt-10">
                         <h5 class="card-title">Имя пользователя</h5>
                         <p class="card-text">Курсов на изучении: 10</p>
@@ -54,8 +159,17 @@
                         </div>
                     </div>
                 </div> 
+                <div class="m-auto" style="max-width: 350px;">
+                    <div class="row">
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#roulette">Случайный курс</button>       
+                    </div>
+                </div>
             </div>
+            
         </div>
+        
+        
+        
     </div>
 
     <div class="container">

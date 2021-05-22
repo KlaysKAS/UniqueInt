@@ -10736,6 +10736,10 @@ textarea.form-control-lg {
   margin-top: 100px;
 }
 
+.mt-70 {
+  margin-top: 70px;
+}
+
 .mt-40 {
   margin-top: 40px;
 }
@@ -10754,6 +10758,7 @@ textarea.form-control-lg {
 }
 
 .progress {
+<<<<<<< HEAD
   border: 1px solid #8b8b8b;
 }
 
@@ -10763,6 +10768,13 @@ textarea.form-control-lg {
 
 .rounded-circle {
   width: 100px;
+=======
+  border: 1px solid #c0c0c0;
+}
+
+.progress-bar {
+  border: 1px solid #c0c0c0;
+>>>>>>> 106d6bb7802c2664c7865e377734159ea245a354
 }
 
 /*# sourceMappingURL=index.css.map */
