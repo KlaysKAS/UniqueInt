@@ -10754,11 +10754,15 @@ textarea.form-control-lg {
 }
 
 .progress {
+<<<<<<< HEAD
   border: 1px solid #c0c0c0;
 }
 
 .progress-bar {
   border: 1px solid #c0c0c0;
+=======
+  border: 1px solid #e9e9e9;
+>>>>>>> 4ba286a0cdf8747ab58954ae4bd264602db4c10a
 }
 
 /*# sourceMappingURL=index.css.map */
