@@ -10728,7 +10728,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.mental-map {
+.container-fluid.mental-map, .mental-map.container-sm, .mental-map.container-md, .mental-map.container-lg, .mental-map.container-xl, .mental-map.container-xxl {
+  height: 100%;
   width: 100%;
 }
 
