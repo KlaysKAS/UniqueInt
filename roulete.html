@@ -1,0 +1,93 @@
+<script src="r.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Untitled</title>
+  <meta charset="utf-8">
+ <style type="text/css">body{
+   position:relative;
+ }
+
+ .roulette-inner img{
+   width:72px;
+   height:72px;
+   margin:2px;
+ }
+
+ .roulette-inner img.active{
+   border:2px solid rgba(89,0,153,.2);
+   box-sizing:border-box;
+   border-radius:50%;
+   padding:-4px 4px 2px 4px;
+   transform:scale(1.7);
+   z-index:1000;
+   background-color:rgba(0,255,127,.5);
+ }
+ </style>
+  
+
+  <script>
+ jQuery.easing['easeOutCirc'] = function (x, t, b, c, d) {
+		return c * Math.sqrt(1 - (t=t/d-1)*t) + b;
+	}
+$(function() {
+    var option = {
+        speed: 6,
+        duration: 3,
+        stopImageNumber: 4
+    };
+
+ $("#go").click(function() {
+    option.stopImageNumber = Math.random() * 11|0;
+    $(".roulette-inner  img").removeClass("active");
+    $("#config").text(JSON.stringify(option));
+    $({
+        left: 0
+    }).animate({
+        left: 844 * option.speed + 75 * (option.stopImageNumber + 6)
+    }, {
+        duration: option.duration * 1000,
+        easing: "easeOutCirc",
+        step: function(a) {
+            $(".roulette-inner").css("transform", "translateX(-" + a % 844 + "px)");
+        },
+        complete: function() {
+            $(".roulette-inner  img").eq(option.stopImageNumber + (option.stopImageNumber < 6) * 11).addClass("active");
+        }
+    });
+  })
+});
+  </script>
+</head>
+<body>
+
+<h2>Config: <span id="config"></span></h2>
+<div class="roulette" style="overflow: hidden; height: 126px; width: 844px;">
+<div class="roulette-inner" style="position: relative; top: 24px; width: 7000px;">
+<img src="https://raw.githubusercontent.com/skryshtafovych/Lottery-html5/master/star.png" style="display: block; float: left;">
+<img src="https://raw.githubusercontent.com/skryshtafovych/Lottery-html5/master/flower.png" style="display: block; float: left;">
+<img src="https://raw.githubusercontent.com/skryshtafovych/Lottery-html5/master/coin.png" style="display: block; float: left;">
+<img src="https://raw.githubusercontent.com/skryshtafovych/Lottery-html5/master/mshroom.png" style="display: block; float: left;">
+<img src="https://raw.githubusercontent.com/skryshtafovych/Lottery-html5/master/chomp.png" style="display: block; float: left;">
+<img src="https://icon-icons.com/icons2/206/PNG/128/Flower_-_Fire_24653.png" style="display: block; float: left;">
+<img src="http://img.informer.com/icons_mac/png/128/218/218340.png" style="display: block; float: left;">
+<img src="https://icon-icons.com/icons2/249/PNG/128/Lamp_27000.png" style="display: block; float: left;">
+<img src="http://www.iconninja.com/files/817/63/651/orange-monster-icon.png" style="display: block; float: left;">
+<img src="http://www.fsiv.com/public/images/logo-share/green/logo8.png" style="display: block; float: left;">
+<img src="http://wiki.tockdom.com/w/images/3/36/Piranha_Plant_Cup.png" style="display: block; float: left;">
+<img src="https://raw.githubusercontent.com/skryshtafovych/Lottery-html5/master/star.png" style="display: block; float: left;">
+<img src="https://raw.githubusercontent.com/skryshtafovych/Lottery-html5/master/flower.png" style="display: block; float: left;">
+<img src="https://raw.githubusercontent.com/skryshtafovych/Lottery-html5/master/coin.png" style="display: block; float: left;">
+<img src="https://raw.githubusercontent.com/skryshtafovych/Lottery-html5/master/mshroom.png" style="display: block; float: left;">
+<img src="https://raw.githubusercontent.com/skryshtafovych/Lottery-html5/master/chomp.png" style="display: block; float: left;">
+<img src="https://icon-icons.com/icons2/206/PNG/128/Flower_-_Fire_24653.png" style="display: block; float: left;">
+<img src="http://img.informer.com/icons_mac/png/128/218/218340.png" style="display: block; float: left;">
+<img src="https://icon-icons.com/icons2/249/PNG/128/Lamp_27000.png" style="display: block; float: left;">
+<img src="http://www.iconninja.com/files/817/63/651/orange-monster-icon.png" style="display: block; float: left;">
+<img src="http://www.fsiv.com/public/images/logo-share/green/logo8.png" style="display: block; float: left;">
+<img src="http://wiki.tockdom.com/w/images/3/36/Piranha_Plant_Cup.png" style="display: block; float: left;">
+</div>
+</div>
+<button id="go" onclick="play()">Go</button>
+</body>
+</html>
