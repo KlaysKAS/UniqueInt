@@ -10748,9 +10748,13 @@ textarea.form-control-lg {
   margin-top: 10px;
 }
 
+.mt-50p {
+  margin-top: 50%;
+}
+
 .avatar-size {
-  height: 100px;
-  width: 100px;
+  height: 100%;
+  width: 100%;
 }
 
 .progress {
