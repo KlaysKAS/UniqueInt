@@ -8,8 +8,35 @@
     <title>Моя ментальная карта</title>
 </head>
 <body>
-    <audio id="chairS" src="http://www.w3schools.com/html/horse.ogg"></audio>
-    <audio id="shelfS" src="stylesheets/materials/sound/chicken.ogg"></audio>
+
+
+
+    <!--Modal information-->
+    <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="modalInfoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalInfoLongTitle">Как это работает?</h5>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    После прохождения модуля, во вкладке ментальная карта у вас появится новый объект. Нажмите на него и закройте глаза.
+                    Выполняя голосовые инструкции вы с лёгкостью создадите собственный "Дворец памяти" в своём сознании и сможете провести ассоциации от
+                    объектов расположенных в нём, к реальным знаниям полученым на курсе. А использование нашей ментальной карты поможет вам в этом освоиться.
+                </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="mCloseB" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+    
+    <audio id="chairS" src=""></audio>
+    <audio id="shelfS" src=""></audio>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -51,6 +78,7 @@
       }
     </style>
     <div id="intro" class="img-fluid">
+
         <img src="./stylesheets/materials/map/shelf.svg" id="shelf" alt="" style="width: 270px; position: absolute; margin-left:700px; margin-top:500px">
         <img src="./stylesheets/materials/map/chair.svg" id="chair" alt="" style="width: 260px; position: absolute; margin-left:1230px; margin-top:480px">
     </div>
