@@ -10753,28 +10753,12 @@ textarea.form-control-lg {
   width: 100px;
 }
 
-.card {
-  border: 0px;
-}
-
 .progress {
-<<<<<<< HEAD
   border: 1px solid #8b8b8b;
 }
 
 .progress-bar {
   border: 1px solid #2629ee;
-}
-
-.rounded-circle {
-  width: 100px;
-=======
-  border: 1px solid #c0c0c0;
-}
-
-.progress-bar {
-  border: 1px solid #c0c0c0;
->>>>>>> 106d6bb7802c2664c7865e377734159ea245a354
 }
 
 /*# sourceMappingURL=index.css.map */
