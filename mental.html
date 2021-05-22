@@ -8,6 +8,9 @@
     <title>Моя ментальная карта</title>
 </head>
 <body>
+    <audio id="chairS" src="http://www.w3schools.com/html/horse.ogg"></audio>
+    <audio id="shelfS" src="stylesheets/materials/sound/chicken.ogg"></audio>
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a href="" class="navbar-brand">OurBrand</a>
@@ -36,9 +39,21 @@
             </div>
         </div>
     </nav>
-
-    <div class="container-fluid">
-        <img src="stylesheets/materials/map.jpg" class="mental-map" alt="">
+    <style>
+        #intro {
+        background-image: url("./stylesheets/materials/map/Room.jpg");
+        height: 100vh;
+      }
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
+        }
+      }
+    </style>
+    <div id="intro" class="img-fluid">
+        <img src="./stylesheets/materials/map/shelf.svg" id="shelf" alt="" style="width: 270px; position: absolute; margin-left:700px; margin-top:500px">
+        <img src="./stylesheets/materials/map/chair.svg" id="chair" alt="" style="width: 260px; position: absolute; margin-left:1230px; margin-top:480px">
     </div>
-</body>
+    <script src="mental.js"></script>
+</body> 
 </html>
