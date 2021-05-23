@@ -18,21 +18,19 @@ musicShelf.addEventListener('click',function(){
 })
 
 
-document.addEventListener("keydown", keyDownHandler, false);
 var mInfo = document.getElementById('modalInfo');
 var mClose = document.getElementById('mCloseB');
+var mOInfo = document.getElementById('mOInfo');
 mClose.addEventListener('click', function(){
     mInfo.setAttribute('class', 'modal fade');
     mInfo.setAttribute('style', 'display: none;');
     mInfo.removeAttribute('aria-modal');
 })
-
-function keyDownHandler(e) {
-  if (e.keyCode == 32) {
-		 mInfo.setAttribute('class', 'modal fade show');
+mOInfo.addEventListener('click', function() {
+  mInfo.setAttribute('class', 'modal fade show');
      mInfo.setAttribute('aria-modal', true);
      mInfo.setAttribute('style', 'display: block;');
-	}
-}
+})
+
 
 var add = document.getElementById('Add');
