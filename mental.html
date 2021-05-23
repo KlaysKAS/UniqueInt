@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/mental.css">
     <title>Моя ментальная карта</title>
+    <style>
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+    </style>
 </head>
 <body>
 
@@ -50,10 +56,6 @@
       </div>
 
     
-    
-    <audio id="chairS" src=""></audio>
-    <audio id="shelfS" src=""></audio>
-    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a href="" class="navbar-brand">OurBrand</a>
@@ -82,7 +84,7 @@
             </div>
         </div>
     </nav>
-    <style>
+    <!-- <style>
         #intro {
         background-image: url("./stylesheets/materials/map/Room.jpg");
         height: 100vh;
@@ -92,12 +94,15 @@
           margin-top: -58.59px;
         }
       }
-    </style>
+    </style> -->
+    <img src="./stylesheets/materials/map/Room.jpg" id="intro" alt="bg" style="position: absolute; width: 100%; height:100%;">
     <div id="intro" class="img-fluid">
-
-        <img src="./stylesheets/materials/map/shelf.svg" id="shelf" alt="" style="width: 270px; position: absolute; margin-left:700px; margin-top:500px">
-        <img src="./stylesheets/materials/map/chair.svg" id="chair" alt="" style="width: 260px; position: absolute; margin-left:1230px; margin-top:480px">
+        <img src="./stylesheets/materials/map/shelf.svg" id="shelf" alt="" style="width: 200px; position: absolute; margin-left:600px; margin-top:350px">
+        <img src="./stylesheets/materials/map/chair.svg" id="chair" alt="" style="width: 220px; position: absolute; margin-left:980px; margin-top:350px">
     </div>
+
+    <button type="button" class="btn btn-dark" style="position: absolute;">Темный</button>
+
     <script src="mental.js"></script>
 </body> 
 </html>
