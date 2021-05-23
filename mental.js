@@ -22,15 +22,27 @@ var mInfo = document.getElementById('modalInfo');
 var mClose = document.getElementById('mCloseB');
 var mOInfo = document.getElementById('mOInfo');
 mClose.addEventListener('click', function(){
-    mInfo.setAttribute('class', 'modal fade');
-    mInfo.setAttribute('style', 'display: none;');
-    mInfo.removeAttribute('aria-modal');
+  mInfo.setAttribute('class', 'modal fade');
+  mInfo.setAttribute('style', 'display: none;');
+  mInfo.removeAttribute('aria-modal');
 })
 mOInfo.addEventListener('click', function() {
   mInfo.setAttribute('class', 'modal fade show');
-     mInfo.setAttribute('aria-modal', true);
-     mInfo.setAttribute('style', 'display: block;');
+  mInfo.setAttribute('aria-modal', true);
+  mInfo.setAttribute('style', 'display: block;');
 })
 
 
-var add = document.getElementById('Add');
+var about = document.getElementById('about');
+var aboutClose = document.getElementById('aboutClose')
+var modalabout = document.getElementById('modalabout')
+about.addEventListener('click', function() {
+  modalabout.setAttribute('class', 'modal fade show');
+  modalabout.setAttribute('aria-modal', true);
+  modalabout.setAttribute('style', 'display: block;');
+})
+aboutClose.addEventListener('click', function(){
+  modalabout.setAttribute('class', 'modal fade');
+  modalabout.setAttribute('style', 'display: none;');
+  modalabout.removeAttribute('aria-modal');
+})

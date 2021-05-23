@@ -5,18 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/mental.css">
+    <title>Моя ментальная карта</title>
     <style>
         body {
             height: 100%;
             overflow: hidden;
         }
-    </style>
-    <title>Моя ментальная карта</title>
-    <style>
-    body {
-        height: 100%;
-        overflow: hidden;
-    }
     </style>
 </head>
 <body>
@@ -39,7 +33,7 @@
     </div>
     </div>
 
-    <!--Modal information-->
+    <!--Modal how it works-->
     <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="modalInfoLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -56,6 +50,42 @@
             </div>
             <div class="modal-footer">
               <button type="button" id="mCloseB" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--Modal information-->
+    <div class="modal fade" id="modalabout" tabindex="-1" role="dialog" aria-labelledby="modalaboutLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalInfoLongTitle">Что такое ментальная карта?</h5>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Дворец памяти, или чертоги разума, – это некое построенное в вашем воображении помещение (реально существующее или вымышленное),
+                    в котором размещены различные опорные пункты – например, кровать, письменный стол, секретер, телевизор. К опорным пунктам по
+                    ассоциациям привязывается информация, которую надо запомнить.
+                </p>
+                <p>
+                    Соответственно, когда вам надо будет что-то вспомнить (воспроизвести сведения), то вы «подойдете» в своем воображении
+                    к нужному месту в вашем дворце памяти / чертогам разума и выудите оттуда необходимые сведения.
+                    Здесь мы поможем вам создать собственый дворец памяти и помистить в него всю самую необходимую информацию из курса.
+                </p>
+                <p>
+                    <a href="https://youtu.be/HzMVPbdFoas">Видио о дворе памяти</a>
+                </p>
+                <p>
+                    <a href="https://experimental-psychic.ru/mnemotekhnika/#a2">Как работают мнемонические техники</a>
+                </p>
+                <p>
+                    <a href="https://advances.sciencemag.org/content/7/10/eabc7606">Иследования, доказывающие эфективность техники</a>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="aboutClose" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -90,7 +120,7 @@
             </div>
         </div>
     </nav>
-
+    
     <img src="./stylesheets/materials/map/Room.jpg" alt="intro" style="width: 100%; position: absolute;">
     
     <div class="dropdown">
@@ -104,10 +134,12 @@
           <li class="dropdown-item" id="mOInfo">Что это?</li>
         </ul>
     </div>
-    
+
+    <button type="button" id="about" class="btn btn-dark" style="position: relative; margin-left:20px; margin-top:20px">Что такое метальная карта?</button>
+        
     <div class="img-fluid">
-        <img src="./stylesheets/materials/map/shelf.svg" id="shelf" alt="" style="width: 230px; position: absolute; margin-left:700px; margin-top:470px">
-        <img src="./stylesheets/materials/map/chair.svg" id="chair" alt="" style="width: 230px; position: absolute; margin-left:1230px; margin-top:480px">
+        <img src="./stylesheets/materials/map/shelf.svg" id="shelf" alt="" style="width: 230px; position: absolute; margin-left:700px; margin-top:430px">
+        <img src="./stylesheets/materials/map/chair.svg" id="chair" alt="" style="width: 230px; position: absolute; margin-left:1200px; margin-top:450px">
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
