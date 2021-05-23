@@ -1,6 +1,7 @@
 var musicChair = document.getElementById('chair');
 var mnemonic = document.getElementById('mnemonic');
 var mnemonicClose = document.getElementById('mnemonicCloseB');
+
 musicChair.addEventListener('click',function(){
   mnemonic.setAttribute('class', 'modal fade show');
   mnemonic.setAttribute('aria-modal', true);
@@ -33,3 +34,5 @@ function keyDownHandler(e) {
      mInfo.setAttribute('style', 'display: block;');
 	}
 }
+
+var add = document.getElementById('Add');
